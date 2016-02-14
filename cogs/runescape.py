@@ -8,7 +8,7 @@ import glob
 import re
 import json
 import os
-import urllib
+import urllib.request
 from discord.ext import commands
 from random import randint
 from random import choice as randchoice

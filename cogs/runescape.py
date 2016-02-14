@@ -23,20 +23,19 @@ class Runescape:
     
     def __init__(self, bot):
         self.bot = bot
-        """
-        ironman = http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=
-        normal = "http://services.runescape.com/m=hiscore/index_lite.ws?player=
-        """
+        imLink = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player="
+        nmLink = "http://services.runescape.com/m=hiscore/index_lite.ws?player="
+        
     
     @commands.command(pass_context=True, no_pm=True)
     async def imlookup(self, ctx, name : str):
     
-    address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name    
+    imLink.append(name)   
     
     try:
-        website = urllib2.urlopen(address)
+        website = urllib2.urlopen(imLink)
         website_html = website.read()
-        await self.bot.say(
+        await self.bot.say(website_html)
     except urllib2.HTTPError, e:
         print "Cannot retrieve URL: HTTP Error Code", e.code
     except urllib2.URLError, e:

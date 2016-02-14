@@ -23,13 +23,15 @@ class Runescape:
     
     def __init__(self, bot):
         self.bot = bot
-        self.ironman = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player="
-        self.normal = "http://services.runescape.com/m=hiscore/index_lite.ws?player="
+        """
+        ironman = http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=
+        normal = "http://services.runescape.com/m=hiscore/index_lite.ws?player=
+        """
     
     @commands.command(pass_context=True, no_pm=True)
     async def imlookup(self, ctx, name : str):
     
-    address = self.ironman + name    
+    address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name    
     
     try:
         website = urllib2.urlopen(address)

@@ -38,7 +38,7 @@ class Runescape:
             website_html = website.read().decode(website.headers.get_content_charset())
             stats = website_html.split("\n")
             overall = stats[0].split(",")
-            await self.bot.say("'''" + name + "'s ranking in overall level is: " + overall[0] + "\n" + name + "'s overall level is: " + overall[1] + "\n" + name + "'s total experience is: " + overall[2] + "'''")
+            await self.bot.say("```" + name + "'s ranking in overall level is: " + overall[0] + "\n" + name + "'s overall level is: " + overall[1] + "\n" + name + "'s total experience is: " + overall[2] + "```")
         except:
             await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
     

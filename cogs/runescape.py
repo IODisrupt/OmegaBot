@@ -1,11 +1,21 @@
 import discord
-from discord.ext import commands
-from random import randint
-from random import choice as randchoice
+import asyncio
 import datetime
 import time
 import aiohttp
-import asyncio
+import threading
+import glob
+import re
+import json
+import os
+from discord.ext import commands
+from random import randint
+from random import choice as randchoice
+from random import choice as rndchoice
+from random import shuffle
+from .utils.dataIO import fileIO
+from .utils import checks
+from bs4 import BeautifulSoup
 
 class Runescape:
     """Runescape-relate commands"""

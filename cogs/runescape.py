@@ -37,7 +37,9 @@ class Runescape:
             website = urllib.request.urlopen(address)
             website_html = website.read().decode(website.headers.get_content_charset())
             stats = website_html.split("\n")
-            await self.bot.say(stats)
+            statsplit = stats.split(",")
+            await self.bot.say(statsplit)
+            await self.bot.say(name + "'s ranking in over level is: " + statsplit[0])
         except:
             await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
     

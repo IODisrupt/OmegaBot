@@ -35,11 +35,7 @@ class Runescape:
         else:
             await self.bot.say("No, you aren't!")
             
-            
-
     async def is_admin(self, author):
-        elif author.id == checks.settings["OWNER"]:
-            return True
         elif discord.utils.get(author.roles, name=checks.settings["ADMIN_ROLE"]) is not None:
             return True
         elif discord.utils.get(author.roles, name=checks.settings["MOD_ROLE"]) is not None:

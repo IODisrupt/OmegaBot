@@ -8,6 +8,7 @@ import glob
 import re
 import json
 import os
+import urllib2
 from discord.ext import commands
 from random import randint
 from random import choice as randchoice
@@ -26,16 +27,21 @@ class Runescape:
         self.normal = "http://services.runescape.com/m=hiscore/index_lite.ws?player="
     
     @commands.command(pass_context=True, no_pm=True)
-    async def adminstatus(self, ctx):
-        """Says if you are an admin or not.
-        """
-        msg = ctx.message
+    async def imlookup(self, ctx, name : str):
+    
+    address = self.ironman + name    
+    
+    try:
+        website = urllib2.urlopen(address)
+        website_html = website.read()
+        await self.bot.say(
+    except urllib2.HTTPError, e:
+        print "Cannot retrieve URL: HTTP Error Code", e.code
+    except urllib2.URLError, e:
+        print "Cannot retrieve URL: " + e.reason[1]
         
-        elif discord.utls.get(author.roles, name=checks.settings["ADMIN_ROLE"]) is not None:
-            await self.bot.say("You are an admin.")
-        else:
-            await self.bot.say("You are nothing!")
-
+        stats = python.Parse(self.ironman + name)
+    
 def setup(bot):
     n = Runescape(bot)
     bot.add_cog(n)

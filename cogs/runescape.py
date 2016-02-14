@@ -35,8 +35,9 @@ class Runescape:
         
         try:
             website = urllib.request.urlopen(address)
-            website_html = website.read()
-            await self.bot.say(website_html)
+            website_html = website.read().decode(website.headers.get_content_charset())
+            stats = website_html.split("\n")
+            await self.bot.say(stats)
         except:
             await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
     

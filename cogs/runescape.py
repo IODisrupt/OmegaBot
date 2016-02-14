@@ -39,8 +39,6 @@ class Runescape:
         print "Cannot retrieve URL: HTTP Error Code", e.code
     except urllib2.URLError, e:
         print "Cannot retrieve URL: " + e.reason[1]
-        
-        stats = python.Parse(self.ironman + name)
     
 def setup(bot):
     n = Runescape(bot)

@@ -30,10 +30,10 @@ class Runescape:
     @commands.command(pass_context=True, no_pm=True)
     async def imlookup(self, ctx, name : str):
     
-    imLink += name   
+    address = imLink + name   
     
     try:
-        website = urllib2.urlopen(imLink)
+        website = urllib2.urlopen(address)
         website_html = website.read()
         await self.bot.say(website_html)
     except urllib2.HTTPError, e:

@@ -12,7 +12,7 @@ import time
 import sys
 
 #
-#  Red, a Discord bot by Twentysix, based on discord.py and its command extension
+#  OmegaBot, a Discord bot by IODisrupt, based on Red-DiscordBot by Twentysix, based on discord.py and its command extension
 #                   https://github.com/Twentysix26/
 #
 #
@@ -21,7 +21,7 @@ import sys
 #
 
 description = """
-Red - A multifunction Discord bot by Twentysix
+OmegaBot - A multifunction Discord bot by IODisrupt, original Red-DiscordBot by Twentysix26
 """
 
 formatter = commands.HelpFormatter(show_check_failure=False)

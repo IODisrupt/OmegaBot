@@ -1,2 +1,0 @@
-python red.py
-pause

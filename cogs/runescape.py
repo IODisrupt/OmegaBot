@@ -23,13 +23,13 @@ class Runescape:
     
     def __init__(self, bot):
         self.bot = bot
-        imLink = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player="
-        nmLink = "http://services.runescape.com/m=hiscore/index_lite.ws?player="
+        """imLink = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player="
+        nmLink = "http://services.runescape.com/m=hiscore/index_lite.ws?player=""""
         
     
     @commands.command(pass_context=True, no_pm=True)
     async def imlookup(self, ctx, name : str):
-        address = imLink + name
+        address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
         
         try:
             website = urllib.urlrequest.urlopen(address)

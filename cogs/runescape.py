@@ -34,7 +34,7 @@ class Runescape:
         address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
         
         try:
-            website = urllib.urlrequest.urlopen(address)
+            website = urllib.request.urlopen(address)
             website_html = website.read()
             await self.bot.say(website_html)
         except:

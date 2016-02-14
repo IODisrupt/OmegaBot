@@ -29,8 +29,21 @@ class Runescape:
         """
         
     
-    @commands.command(pass_context=True, no_pm=True)
+    @commands.group(name="stats", pass_context=True)
     async def stats(self, ctx, name : str):
+        address = "http://services.runescape.com/m=hiscore/index_lite.ws?player=" + name
+        
+        try:
+            website = urllib.request.urlopen(address)
+            website_html = website.read().decode(website.headers.get_content_charset())
+            stats = website_html.split("\n")
+            overall = stats[0].split(",")
+            await self.bot.say(name + "'s ranking in overall level is: " + overall[0] + "\n" + name + "'s overall level is: " + overall[1] + "\n" + name + "'s total experience is: " + overall[2])
+        except:
+            await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
+
+    @stats.command(name="stats", pass_context=True)
+    async def stats_im(self, ctx, name : str):
         address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
         
         try:

@@ -35,10 +35,8 @@ class Runescape:
             website = urllib.urlrequest.urlopen(address)
             website_html = website.read()
             await self.bot.say(website_html)
-        except urllib..urlrequest.HTTPError, e:
-            print "Cannot retrieve URL: HTTP Error Code", e.code
-        except urllib.urlrequest.URLError, e:
-            print "Cannot retrieve URL: " + e.reason[1]
+        except:
+            await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
     
 def setup(bot):
     n = Runescape(bot)

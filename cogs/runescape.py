@@ -30,18 +30,11 @@ class Runescape:
         """Says if you are an admin or not.
         """
         msg = ctx.message
-        if await self.is_admin(msg.author):
-            await self.bot.say("Yes, you are!")
+        
+        elif discord.utls.get(author.roles, name=checks.settings["ADMIN_ROLE"]) is not None:
+            await self.bot.say("You are an admin.")
         else:
-            await self.bot.say("No, you aren't!")
-            
-    async def is_admin(self, author):
-        elif discord.utils.get(author.roles, name=checks.settings["ADMIN_ROLE"]) is not None:
-            return True
-        elif discord.utils.get(author.roles, name=checks.settings["MOD_ROLE"]) is not None:
-            return True
-        else:
-            return False
+            await self.bot.say("You are nothing!")
 
 def setup(bot):
     n = Runescape(bot)

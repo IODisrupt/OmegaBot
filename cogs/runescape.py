@@ -29,18 +29,16 @@ class Runescape:
     
     @commands.command(pass_context=True, no_pm=True)
     async def imlookup(self, ctx, name : str):
-    
-    link = [imLink,name]
-    address = ''.join(link) 
-    
-    try:
-        website = urllib2.urlopen(address)
-        website_html = website.read()
-        await self.bot.say(website_html)
-    except urllib2.HTTPError, e:
-        print "Cannot retrieve URL: HTTP Error Code", e.code
-    except urllib2.URLError, e:
-        print "Cannot retrieve URL: " + e.reason[1]
+        address = imLink + name
+        
+        try:
+            website = urllib2.urlopen(address)
+            website_html = website.read()
+            await self.bot.say(website_html)
+        except urllib2.HTTPError, e:
+            print "Cannot retrieve URL: HTTP Error Code", e.code
+        except urllib2.URLError, e:
+            print "Cannot retrieve URL: " + e.reason[1]
     
 def setup(bot):
     n = Runescape(bot)

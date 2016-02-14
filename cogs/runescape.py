@@ -32,12 +32,12 @@ class Runescape:
         address = imLink + name
         
         try:
-            website = urllib2.urlopen(address)
+            website = urllib.urlrequest.urlopen(address)
             website_html = website.read()
             await self.bot.say(website_html)
-        except urllib2.HTTPError, e:
+        except urllib..urlrequest.HTTPError, e:
             print "Cannot retrieve URL: HTTP Error Code", e.code
-        except urllib2.URLError, e:
+        except urllib.urlrequest.URLError, e:
             print "Cannot retrieve URL: " + e.reason[1]
     
 def setup(bot):

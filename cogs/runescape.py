@@ -30,7 +30,7 @@ class Runescape:
     @commands.command(pass_context=True, no_pm=True)
     async def imlookup(self, ctx, name : str):
     
-    imLink.append(name)   
+    imLink += name   
     
     try:
         website = urllib2.urlopen(imLink)

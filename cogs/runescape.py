@@ -25,7 +25,7 @@ class Runescape:
         self.ironman = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player="
         self.normal = "http://services.runescape.com/m=hiscore/index_lite.ws?player="
     
-    @commands.command()
+    @commands.command(pass_context=True, no_pm=True)
     async def adminstatus(self, ctx):
         """Says if you are an admin or not.
         """

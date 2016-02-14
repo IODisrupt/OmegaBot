@@ -1,6 +1,4 @@
-# Red - A multifunction Discord bot
-#### *Now fully modular*
+# OmegaBot - A multifunction Discord bot (fork of Red-DiscordBot)
 
-This is a work in progress. Bugs and missing features are to be expected.  
+Made specifically for our Discord server. Feel free to leave comments, issues, feature ideas, etc.
 
-####[ [How to try it out](https://github.com/Twentysix26/Red-DiscordBot/wiki/Red-v2) ]

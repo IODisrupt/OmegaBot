@@ -28,9 +28,24 @@ class Runescape:
         nmLink = http://services.runescape.com/m=hiscore/index_lite.ws?player=
         """
         
-    
     @commands.group(name="stats", pass_context=True)
-    async def stats(self, ctx, name : str):
+    async def _stats(self, ctx, name : str):
+        """Checks Runescape Hiscores. If no subcommand, shows all levels.""""
+        if ctx.invoked_subcommand is None:
+            address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
+        
+            try:
+                website = urllib.request.urlopen(address)
+                website_html = website.read().decode(website.headers.get_content_charset())
+                stats = website_html.split("\n")
+                overall = stats[0].split(",")
+                await self.bot.say("```" + name + "'s ranking in overall level is: " + overall[0] + "\n" + name + "'s overall level is: " + overall[1] + "\n" + name + "'s total experience is: " + overall[2] + "```")
+            except:
+                await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
+    
+    @_stats.command(name="stats", pass_context=True)
+    async def stats_overall(self, ctx, name : str):
+        """Checks Runescape hiscores for requested stat."""
         address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
         
         try:

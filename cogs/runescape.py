@@ -153,6 +153,21 @@ class Runescape:
         except:
             await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
 
+    #####Magic99#####        
+    @commands.command(pass_context=True, no_pm=True)
+    async def magic99(self, ctx, name : str):
+        address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
+        
+        try:
+            website = urllib.request.urlopen(address)
+            website_html = website.read().decode(website.headers.get_content_charset())
+            stats = website_html.split("\n")
+            stat = stats[7].split(",")
+            left = (13034431 - int(stat[2])) / 65
+            await self.bot.say("```It would take an additional " + str(left) + " silver bars to achieve level 99.```")
+        except:
+            await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
+
     #####Cooking#####        
     @commands.command(pass_context=True, no_pm=True)
     async def cooking(self, ctx, name : str):

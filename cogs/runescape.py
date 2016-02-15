@@ -274,7 +274,7 @@ class Runescape:
             website = urllib.request.urlopen(address)
             website_html = website.read().decode(website.headers.get_content_charset())
             stats = website_html.split("\n")
-            stat = stats[15].split(",")
+            stat = stats[16].split(",")
             await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
         except:
             await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
@@ -288,7 +288,7 @@ class Runescape:
             website = urllib.request.urlopen(address)
             website_html = website.read().decode(website.headers.get_content_charset())
             stats = website_html.split("\n")
-            stat = stats[16].split(",")
+            stat = stats[17].split(",")
             await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
         except:
             await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")

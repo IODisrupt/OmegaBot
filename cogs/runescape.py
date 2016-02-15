@@ -62,7 +62,7 @@ class Runescape:
     
     #####Attack#####        
     @_stat.command(name="attack", pass_context=True)
-    async def stat_overall(self, ctx, name : str):
+    async def stat_attack(self, ctx, name : str):
         address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
         
         try:

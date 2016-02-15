@@ -236,20 +236,6 @@ class Runescape:
             await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
         except:
             await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
-            
-    #####Crafting#####        
-    @commands.command(pass_context=True, no_pm=True)
-    async def crafting(self, ctx, name : str):
-        address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
-        
-        try:
-            website = urllib.request.urlopen(address)
-            website_html = website.read().decode(website.headers.get_content_charset())
-            stats = website_html.split("\n")
-            stat = stats[13].split(",")
-            await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
-        except:
-            await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
 
     #####Crafting99#####        
     @commands.command(pass_context=True, no_pm=True)
@@ -261,7 +247,7 @@ class Runescape:
             website_html = website.read().decode(website.headers.get_content_charset())
             stats = website_html.split("\n")
             stat = stats[13].split(",")
-            left = (13034431 - stat[2]) / 52.5
+            left = (13034431 - int(stat[2])) / 52.5
             await self.bot.say("```It would take an additional " + str(left) + " silver bars to achieve level 99.```")
         except:
             await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")

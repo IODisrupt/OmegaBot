@@ -30,7 +30,6 @@ class Runescape:
         
     @commands.group(name="stats", pass_context=True)
     async def _stats(self, ctx, name : str):
-        """Checks Runescape Hiscores. If no subcommand, shows all levels.""""
         if ctx.invoked_subcommand is None:
             address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
         

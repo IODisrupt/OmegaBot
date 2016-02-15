@@ -97,9 +97,9 @@ class Runescape:
         except:
             await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
             
-    #####Ranged#####        
+    #####Constitution#####        
     @commands.command(pass_context=True, no_pm=True)
-    async def ranged(self, ctx, name : str):
+    async def constitution(self, ctx, name : str):
         address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
         
         try:
@@ -111,9 +111,9 @@ class Runescape:
         except:
             await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
             
-    #####Prayer#####        
+    #####Ranged#####        
     @commands.command(pass_context=True, no_pm=True)
-    async def prayer(self, ctx, name : str):
+    async def ranged(self, ctx, name : str):
         address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
         
         try:
@@ -121,6 +121,34 @@ class Runescape:
             website_html = website.read().decode(website.headers.get_content_charset())
             stats = website_html.split("\n")
             stat = stats[5].split(",")
+            await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
+        except:
+            await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
+            
+    #####Prayer#####        
+    @commands.command(pass_context=True, no_pm=True)
+    async def ranged(self, ctx, name : str):
+        address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
+        
+        try:
+            website = urllib.request.urlopen(address)
+            website_html = website.read().decode(website.headers.get_content_charset())
+            stats = website_html.split("\n")
+            stat = stats[6].split(",")
+            await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
+        except:
+            await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
+
+    #####Magic#####        
+    @commands.command(pass_context=True, no_pm=True)
+    async def magic(self, ctx, name : str):
+        address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
+        
+        try:
+            website = urllib.request.urlopen(address)
+            website_html = website.read().decode(website.headers.get_content_charset())
+            stats = website_html.split("\n")
+            stat = stats[7].split(",")
             await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
         except:
             await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")

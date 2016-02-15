@@ -40,15 +40,10 @@ class Runescape:
             await self.bot.say("```" + name + "'s ranking in overall level is: " + overall[0] + "\n" + name + "'s overall level is: " + overall[1] + "\n" + name + "'s total experience is: " + overall[2] + "```")
         except:
             await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly? \n Maybe you meant the !stat command?")
-                
-    @commands.group(name="stat", pass_context=True)
-    async def _stat(self, ctx, name : str):
-        if ctx.invoked_subcommand is None:
-            await self.bot.say("Please specify which stat you wanted to lookup.")
     
     #####Overall#####
-    @_stat.command(name="overall", pass_context=True)
-    async def stat_overall(self, ctx, name : str):
+    @commands.command(pass_context=True, no_pm=True)
+    async def overall(self, ctx, name : str):
         address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
         
         try:
@@ -61,8 +56,8 @@ class Runescape:
             await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
     
     #####Attack#####        
-    @_stat.command(name="attack", pass_context=True)
-    async def stat_attack(self, ctx, name : str):
+    @commands.command(pass_context=True, no_pm=True)
+    async def attack(self, ctx, name : str):
         address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
         
         try:

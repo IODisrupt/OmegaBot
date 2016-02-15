@@ -46,6 +46,7 @@ class Runescape:
         if ctx.invoked_subcommand is None:
             await self.bot.say("Please specify which stat you wanted to lookup.")
     
+    #####Overall#####
     @_stat.command(name="stat", pass_context=True)
     async def stat_overall(self, ctx, name : str):
         address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
@@ -54,8 +55,22 @@ class Runescape:
             website = urllib.request.urlopen(address)
             website_html = website.read().decode(website.headers.get_content_charset())
             stats = website_html.split("\n")
-            overall = stats[0].split(",")
-            await self.bot.say("```" + name + "'s ranking in overall level is: " + overall[0] + "\n" + name + "'s overall level is: " + overall[1] + "\n" + name + "'s total experience is: " + overall[2] + "```")
+            stat = stats[0].split(",")
+            await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
+        except:
+            await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
+    
+    #####Attack#####        
+    @_stat.command(name="stat", pass_context=True)
+    async def stat_overall(self, ctx, name : str):
+        address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
+        
+        try:
+            website = urllib.request.urlopen(address)
+            website_html = website.read().decode(website.headers.get_content_charset())
+            stats = website_html.split("\n")
+            stat = stats[1].split(",")
+            await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
         except:
             await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
     

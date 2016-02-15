@@ -164,7 +164,7 @@ class Runescape:
             stats = website_html.split("\n")
             stat = stats[7].split(",")
             left = (13034431 - int(stat[2])) / 65
-            await self.bot.say("```It would take an additional " + str(left) + " silver bars to achieve level 99.```")
+            await self.bot.say("```It would take an additional " + str(left) + " high alch casts to achieve level 99.```")
         except:
             await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
 

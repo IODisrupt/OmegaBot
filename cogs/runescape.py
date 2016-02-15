@@ -96,7 +96,35 @@ class Runescape:
             await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
         except:
             await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
-    
+            
+    #####Ranged#####        
+    @commands.command(pass_context=True, no_pm=True)
+    async def ranged(self, ctx, name : str):
+        address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
+        
+        try:
+            website = urllib.request.urlopen(address)
+            website_html = website.read().decode(website.headers.get_content_charset())
+            stats = website_html.split("\n")
+            stat = stats[4].split(",")
+            await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
+        except:
+            await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
+            
+    #####Prayer#####        
+    @commands.command(pass_context=True, no_pm=True)
+    async def prayer(self, ctx, name : str):
+        address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
+        
+        try:
+            website = urllib.request.urlopen(address)
+            website_html = website.read().decode(website.headers.get_content_charset())
+            stats = website_html.split("\n")
+            stat = stats[5].split(",")
+            await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
+        except:
+            await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
+
 def setup(bot):
     n = Runescape(bot)
     bot.add_cog(n)

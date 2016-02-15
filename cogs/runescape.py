@@ -127,7 +127,7 @@ class Runescape:
             
     #####Prayer#####        
     @commands.command(pass_context=True, no_pm=True)
-    async def ranged(self, ctx, name : str):
+    async def prayer(self, ctx, name : str):
         address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
         
         try:

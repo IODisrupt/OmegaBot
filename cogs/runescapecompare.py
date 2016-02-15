@@ -50,15 +50,15 @@ class Runescapecompare:
             stat1 = stats1[0].split(",")
             stat2= stats2[0].split(",")
             if stat1[2] > stat2[2]:
-              comparerank = stat1[0] - stat2[0]
-              comparelvl = stat1[1] - stat2[1]
-              comparexp = stat1[2] - stat2[2]
-              await self.bot.say("```" + name1 + "'s ranking is " + comparerank + " ranks higher than " + name2 + "'s rank.\n" + name1 + "'s level is " + comparelvl + " levels higher than " + name2 + "'s.\n" + name1 + "'s total experience is " + comparexp + " higher than " + name2 + "'s.```")
+              comparerank = int(stat1[0]) - int(stat2[0])
+              comparelvl = int(stat1[1]) - int(stat2[1])
+              comparexp = int(stat1[2]) - int(stat2[2])
+              await self.bot.say("```" + name1 + "'s ranking is " + str(comparerank) + " ranks higher than " + name2 + "'s rank.\n" + name1 + "'s level is " + str(comparelvl) + " levels higher than " + name2 + "'s.\n" + name1 + "'s total experience is " + str(comparexp) + " higher than " + name2 + "'s.```")
             if stat2[2] > stat1[2]:
               comparerank = stat2[0] - stat1[0]
               comparelvl = stat2[1] - stat1[1]
               comparexp = stat2[2] - stat1[2]
-              await self.bot.say("```" + name2 + "'s ranking is " + comparerank + " ranks higher than " + name1 + "'s rank.\n" + name2 + "'s level is " + comparelvl + " levels higher than " + name1 + "'s.\n" + name2 + "'s total experience is " + comparexp + " higher than " + name1 + "'s.```")
+              await self.bot.say("```" + name2 + "'s ranking is " + str(comparerank) + " ranks higher than " + name1 + "'s rank.\n" + name2 + "'s level is " + str(comparelvl) + " levels higher than " + name1 + "'s.\n" + name2 + "'s total experience is " + str(comparexp) + " higher than " + name1 + "'s.```")
         except:
             await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
             

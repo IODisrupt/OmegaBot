@@ -45,7 +45,6 @@ class Runescape:
     
     @_stats.command(name="stats", pass_context=True)
     async def stats_overall(self, ctx, name : str):
-        """Checks Runescape hiscores for requested stat."""
         address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
         
         try:

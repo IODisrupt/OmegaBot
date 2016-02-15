@@ -39,7 +39,7 @@ class Runescape:
             overall = stats[0].split(",")
             await self.bot.say("```" + name + "'s ranking in overall level is: " + overall[0] + "\n" + name + "'s overall level is: " + overall[1] + "\n" + name + "'s total experience is: " + overall[2] + "```")
         except:
-            await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly? \n Maybe you meant the !stat command?")
+            await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
     
     #####Overall#####
     @commands.command(pass_context=True, no_pm=True)
@@ -65,6 +65,34 @@ class Runescape:
             website_html = website.read().decode(website.headers.get_content_charset())
             stats = website_html.split("\n")
             stat = stats[1].split(",")
+            await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
+        except:
+            await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
+            
+    #####Defence#####        
+    @commands.command(pass_context=True, no_pm=True)
+    async def defence(self, ctx, name : str):
+        address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
+        
+        try:
+            website = urllib.request.urlopen(address)
+            website_html = website.read().decode(website.headers.get_content_charset())
+            stats = website_html.split("\n")
+            stat = stats[2].split(",")
+            await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
+        except:
+            await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
+            
+    #####Strength#####        
+    @commands.command(pass_context=True, no_pm=True)
+    async def strength(self, ctx, name : str):
+        address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
+        
+        try:
+            website = urllib.request.urlopen(address)
+            website_html = website.read().decode(website.headers.get_content_charset())
+            stats = website_html.split("\n")
+            stat = stats[3].split(",")
             await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
         except:
             await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")

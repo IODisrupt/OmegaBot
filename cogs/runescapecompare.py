@@ -18,7 +18,7 @@ from .utils.dataIO import fileIO
 from .utils import checks
 from bs4 import BeautifulSoup
 
-class Runescape:
+class Runescapecompare:
     """Runescape-relate commands"""
     
     def __init__(self, bot):

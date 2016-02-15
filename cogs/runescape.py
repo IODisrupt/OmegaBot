@@ -67,7 +67,7 @@ class Runescape:
             stat = stats[0].split(",")
             avgxp = int(stat[2]) / 28
             avglvl = int(stat[1]) / 28
-            await self.bot.say("```" + name + "'s average XP per skill is " + str(round(avgxp,2)) + "\n" + name + "'s average level per skill is " + str(round(avglvl,0)) + ".```")
+            await self.bot.say("```" + name + "'s average XP per skill is " + str(round(avgxp,2)) + "\n" + name + "'s average level per skill is " + str(round(avglvl)) + ".```")
         except:
             await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
     

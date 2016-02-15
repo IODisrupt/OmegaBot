@@ -47,7 +47,7 @@ class Runescape:
             await self.bot.say("Please specify which stat you wanted to lookup.")
     
     #####Overall#####
-    @_stat.command(name="stat", pass_context=True)
+    @_stat.command(name="overall", pass_context=True)
     async def stat_overall(self, ctx, name : str):
         address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
         
@@ -61,7 +61,7 @@ class Runescape:
             await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
     
     #####Attack#####        
-    @_stat.command(name="stat", pass_context=True)
+    @_stat.command(name="attack", pass_context=True)
     async def stat_overall(self, ctx, name : str):
         address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
         

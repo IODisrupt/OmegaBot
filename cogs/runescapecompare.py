@@ -50,7 +50,7 @@ class Runescapecompare:
             stat1 = stats1[0].split(",")
             stat2= stats2[0].split(",")
             if stat1[2] > stat2[2]:
-              comparerank = int(stat1[0]) - int(stat2[0])
+              comparerank = int(stat2[0]) - int(stat1[0])
               comparelvl = int(stat1[1]) - int(stat2[1])
               comparexp = int(stat1[2]) - int(stat2[2])
               await self.bot.say("```" + name1 + "'s ranking is " + str(comparerank) + " ranks higher than " + name2 + "'s rank.\n" + name1 + "'s level is " + str(comparelvl) + " levels higher than " + name2 + "'s.\n" + name1 + "'s total experience is " + str(comparexp) + " higher than " + name2 + "'s.```")

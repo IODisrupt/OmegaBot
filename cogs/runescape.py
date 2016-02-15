@@ -293,6 +293,146 @@ class Runescape:
         except:
             await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
 
+    #####Thieving#####        
+    @commands.command(pass_context=True, no_pm=True)
+    async def thieving(self, ctx, name : str):
+        address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
+        
+        try:
+            website = urllib.request.urlopen(address)
+            website_html = website.read().decode(website.headers.get_content_charset())
+            stats = website_html.split("\n")
+            stat = stats[18].split(",")
+            await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
+        except:
+            await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
+
+    #####Slayer#####        
+    @commands.command(pass_context=True, no_pm=True)
+    async def slayer(self, ctx, name : str):
+        address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
+        
+        try:
+            website = urllib.request.urlopen(address)
+            website_html = website.read().decode(website.headers.get_content_charset())
+            stats = website_html.split("\n")
+            stat = stats[19].split(",")
+            await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
+        except:
+            await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
+
+    #####Farming#####        
+    @commands.command(pass_context=True, no_pm=True)
+    async def farming(self, ctx, name : str):
+        address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
+        
+        try:
+            website = urllib.request.urlopen(address)
+            website_html = website.read().decode(website.headers.get_content_charset())
+            stats = website_html.split("\n")
+            stat = stats[20].split(",")
+            await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
+        except:
+            await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
+
+    #####Runecrafting#####        
+    @commands.command(pass_context=True, no_pm=True)
+    async def runecrafting(self, ctx, name : str):
+        address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
+        
+        try:
+            website = urllib.request.urlopen(address)
+            website_html = website.read().decode(website.headers.get_content_charset())
+            stats = website_html.split("\n")
+            stat = stats[21].split(",")
+            await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
+        except:
+            await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
+
+    #####Hunter#####        
+    @commands.command(pass_context=True, no_pm=True)
+    async def hunter(self, ctx, name : str):
+        address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
+        
+        try:
+            website = urllib.request.urlopen(address)
+            website_html = website.read().decode(website.headers.get_content_charset())
+            stats = website_html.split("\n")
+            stat = stats[22].split(",")
+            await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
+        except:
+            await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
+
+    #####Construction#####        
+    @commands.command(pass_context=True, no_pm=True)
+    async def construction(self, ctx, name : str):
+        address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
+        
+        try:
+            website = urllib.request.urlopen(address)
+            website_html = website.read().decode(website.headers.get_content_charset())
+            stats = website_html.split("\n")
+            stat = stats[23].split(",")
+            await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
+        except:
+            await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
+
+    #####Summoning#####        
+    @commands.command(pass_context=True, no_pm=True)
+    async def summoning(self, ctx, name : str):
+        address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
+        
+        try:
+            website = urllib.request.urlopen(address)
+            website_html = website.read().decode(website.headers.get_content_charset())
+            stats = website_html.split("\n")
+            stat = stats[24].split(",")
+            await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
+        except:
+            await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
+
+    #####Dungeoneering#####        
+    @commands.command(pass_context=True, no_pm=True)
+    async def dungeoneering(self, ctx, name : str):
+        address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
+        
+        try:
+            website = urllib.request.urlopen(address)
+            website_html = website.read().decode(website.headers.get_content_charset())
+            stats = website_html.split("\n")
+            stat = stats[25].split(",")
+            await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
+        except:
+            await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
+
+    #####Divination#####        
+    @commands.command(pass_context=True, no_pm=True)
+    async def divination(self, ctx, name : str):
+        address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
+        
+        try:
+            website = urllib.request.urlopen(address)
+            website_html = website.read().decode(website.headers.get_content_charset())
+            stats = website_html.split("\n")
+            stat = stats[26].split(",")
+            await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
+        except:
+            await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
+
+    #####Invention#####        
+    @commands.command(pass_context=True, no_pm=True)
+    async def invention(self, ctx, name : str):
+        address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
+        
+        try:
+            website = urllib.request.urlopen(address)
+            website_html = website.read().decode(website.headers.get_content_charset())
+            stats = website_html.split("\n")
+            stat = stats[27].split(",")
+            await self.bot.say("```" + name + "'s ranking is: " + stat[0] + "\n" + name + "'s level is: " + stat[1] + "\n" + name + "'s total experience is: " + stat[2] + "```")
+        except:
+            await self.bot.say("Sorry... Something went wrong there. Did you type the name correctly?")
+
 def setup(bot):
     n = Runescape(bot)
     bot.add_cog(n)

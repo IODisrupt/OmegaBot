@@ -57,7 +57,7 @@ class Runescape:
     
     #####Average#####
     @commands.command(pass_context=True, no_pm=True)
-    async def overall(self, ctx, name : str):
+    async def avg(self, ctx, name : str):
         address = "http://services.runescape.com/m=hiscore_ironman/index_lite.ws?player=" + name
         
         try:

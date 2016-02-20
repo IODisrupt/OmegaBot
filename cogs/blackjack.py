@@ -58,9 +58,8 @@ def check_files():
     f = 'data/economy/blank.json'
     if not fileIO(f, "check"):
         print("Creating empty bank.json")
-        fileIO(f, "save", {})
-
+        fileIO(f, "save", {})"""
 
  def setup(bot):
-        check_folders()
-        check_files()"""
+    bot.add_listener(n.incoming_messages, "on_message")
+    bot.add_cog(n)

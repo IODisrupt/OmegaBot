@@ -6,7 +6,7 @@ from .utils import checks
 import time
 import os
 
-deck =[1,2,3,4,5,6,7,8,9,10,10,10,10]*4
+"""deck =[1,2,3,4,5,6,7,8,9,10,10,10,10]*4
 player = []
 dealer = []
 c = 'y'
@@ -15,7 +15,7 @@ def __init__(self, bot):
         self.bot = bot
         self.bank = fileIO("data/economy/bank.json", "load")
         self.settings = fileIO("data/economy/settings.json", "load")
-        self.payday_register = {}
+        self.payday_register = {}"""
 
 
 @commands.group(name="blackjack", pass_context=True)
@@ -37,7 +37,7 @@ async def _help(self, ctx):
            "\n")
 
 
-def check_folders():
+"""def check_folders():
     if not os.path.exists("data/economy"):
         print("Creating data/economy folder...")
         os.makedirs("data/economy")

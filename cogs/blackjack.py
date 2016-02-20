@@ -17,24 +17,26 @@ def __init__(self, bot):
         self.settings = fileIO("data/economy/settings.json", "load")
         self.payday_register = {}"""
 
+class Blackjack:
+    """Blackjack broh"""
 
-@commands.group(name="blackjack", pass_context=True)
-async def _blackjack(self, ctx):
-    """Blackjack Operations"""
-    if ctx.invoked_subcommand is None:
-        await self.bot.say("Type !blackjack help")
+        @commands.group(name="blackjack", pass_context=True)
+        async def _blackjack(self, ctx):
+         """Blackjack Operations"""
+         if ctx.invoked_subcommand is None:
+                await self.bot.say("Type !blackjack help")
 
-@_blackjack.command(pass_context =True)
-async def _help(self, ctx):
-    """Blackjack Help"""
-    await self.bot.say("Blackjack Help"
-           "\n*2"
-           "Commands:"
-           "\n"
-           "!bank register: Registers an account at the Twentysix bank"
-           "\n"
-           "!bank balance: Shows your current balance"
-           "\n")
+        @_blackjack.command(pass_context =True)
+        async def _help(self, ctx):
+            """Blackjack Help"""
+                await self.bot.say("Blackjack Help"
+                "\n*2"
+                "Commands:"
+                "\n"
+                "!bank register: Registers an account at the Twentysix bank"
+                "\n"
+                "!bank balance: Shows your current balance"
+                "\n")
 
 
 """def check_folders():

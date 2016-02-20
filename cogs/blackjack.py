@@ -61,4 +61,4 @@ def check_files():
 
  def setup(bot):
         check_folders()
-        check_files()
+        check_files()"""

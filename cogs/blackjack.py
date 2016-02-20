@@ -60,6 +60,6 @@ def check_files():
         print("Creating empty bank.json")
         fileIO(f, "save", {})"""
 
- def setup(bot):
-    bot.add_listener(n.incoming_messages, "on_message")
-    bot.add_cog(n)
+        def setup(bot):
+                bot.add_listener(n.incoming_messages, "on_message")
+                bot.add_cog(n)

@@ -22,13 +22,13 @@ class Blackjack:
 
         @commands.group(name="blackjack", pass_context=True)
         async def _blackjack(self, ctx):
-        """Blackjack Operations"""
+                """Blackjack Operations"""
                 if ctx.invoked_subcommand is None:
                         await self.bot.say("Type !blackjack help")
 
         @_blackjack.command(pass_context =True)
         async def _help(self, ctx):
-        """Blackjack Help"""
+                """Blackjack Help"""
                 await self.bot.say("Blackjack Help"
                 "\n*2"
                 "Commands:"

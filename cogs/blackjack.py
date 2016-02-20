@@ -27,7 +27,7 @@ async def _blackjack(self, ctx):
 @_blackjack.command(pass_context =True)
 async def _help(self, ctx):
     """Blackjack Help"""
-    print ("Blackjack Help"
+    await self.bot.say("Blackjack Help"
            "\n*2"
            "Commands:"
            "\n"

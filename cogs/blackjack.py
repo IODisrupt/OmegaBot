@@ -18,7 +18,7 @@ def __init__(self, bot):
         self.payday_register = {}"""
 
 class Blackjack:
-"""Blackjack broh"""
+        """Blackjack broh"""
 
         @commands.group(name="blackjack", pass_context=True)
         async def _blackjack(self, ctx):
